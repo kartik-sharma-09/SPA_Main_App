@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom";
-import PageContent from "../components/PageComponent";
+import PageContent from "../components/PageContent";
 import MainNavigation from "../components/MainNavigation";
 
 function ErrorPage() {
@@ -9,7 +9,7 @@ function ErrorPage() {
   let message = "Something Went Wrong !";
 
   if (error.status === 500) {
-    message = JSON.parse(error.data).message;
+    message = error.data.message;
   }
 
   if (error.status === 400) {
